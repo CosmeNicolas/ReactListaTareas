@@ -1,9 +1,9 @@
-/* import { ListGroup } from "react-bootstrap";
+import { ListGroup } from "react-bootstrap";
 
 const ItemTarea = () => {
-  return (
-  
-  );
+    return (
+        <ListGroup.Item>tarea 1</ListGroup.Item>
+    );
 };
 
-export default ItemTarea; */
+export default ItemTarea;
