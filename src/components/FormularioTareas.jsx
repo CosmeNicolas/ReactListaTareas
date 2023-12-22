@@ -4,9 +4,10 @@ import {Button , Form} from 'react-bootstrap';
 import { useState } from 'react';
 import ListaTareas from './ListaTareas';
 
+
 const FormularioTareas = () => {
   //inicializar el State
-  const [tarea, setTarea] = useState('');
+  const [tarea, setTarea] = useState('')
 
   return (
     <section>
