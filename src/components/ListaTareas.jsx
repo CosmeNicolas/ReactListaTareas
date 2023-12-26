@@ -1,10 +1,14 @@
 import { ListGroup } from "react-bootstrap";
 import ItemTarea from "./ItemTarea";
 
-const Listatareas = () => {
+//traigo las propiedades con desestructuracion q en este caso es un []
+const Listatareas = ({tareas}) => {
     return (
         <ListGroup>
-            <ItemTarea></ItemTarea>
+            {
+                tareas.map((elementoTarea, posicionTarea)=> <ItemTarea key={posicionTarea}/>)
+            }
+            
         </ListGroup>
     );
 };
