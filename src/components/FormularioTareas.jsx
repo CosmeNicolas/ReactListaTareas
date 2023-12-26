@@ -10,6 +10,12 @@ const FormularioTareas = () => {
   const [tarea, setTarea] = useState('');
   const [tareas, setTareas] = useState([]);
 
+  //borrar tarea
+  const borrarTarea = (nombreTarea)=>{
+    const copiaTareas = tareas.filter((tarea)=> tarea !== nombreTarea);
+    setTareas(copiaTareas)
+  }
+
   const handleSubmit =  (e) =>{
     e.preventDefault();
     console.log('desde el evento submit')
@@ -38,7 +44,7 @@ const FormularioTareas = () => {
           <Button variant="info" className="mx-2" type="submit">Enviar</Button>
         </Form.Group>
       </Form>
-      <ListaTareas tareas={tareas} />
+      <ListaTareas tareas={tareas} borrarTarea={borrarTarea}/>
     </section>
   );
 };
