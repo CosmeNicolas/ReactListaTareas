@@ -6,7 +6,7 @@ const Listatareas = ({tareas}) => {
     return (
         <ListGroup>
             {
-                tareas.map((elementoTarea, posicionTarea)=> <ItemTarea key={posicionTarea}/>)
+                tareas.map((elementoTarea, posicionTarea)=> <ItemTarea key={posicionTarea} nombreTarea={elementoTarea} />)
             }
             
         </ListGroup>
