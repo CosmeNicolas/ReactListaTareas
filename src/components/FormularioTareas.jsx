@@ -8,6 +8,7 @@ import ListaTareas from './ListaTareas';
 const FormularioTareas = () => {
   //inicializar el State
   const [tarea, setTarea] = useState('')
+  const [tareas, setTareas] = useState([])
 
   return (
     <section>
@@ -20,6 +21,7 @@ const FormularioTareas = () => {
             minLength={3}
             maxLength={50}
             onChange={(e) => setTarea(e.target.value)}
+            value={tarea}
           />
           <Button variant="info" className="mx-2" type="submit">Enviar</Button>
         </Form.Group>
