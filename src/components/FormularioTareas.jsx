@@ -7,12 +7,24 @@ import ListaTareas from './ListaTareas';
 //src
 const FormularioTareas = () => {
   //inicializar el State
-  const [tarea, setTarea] = useState('')
-  const [tareas, setTareas] = useState([])
+  const [tarea, setTarea] = useState('');
+  const [tareas, setTareas] = useState([]);
+
+  const handleSubmit =  (e) =>{
+    e.preventDefault();
+    console.log('desde el evento submit')
+    //tareas.push(asd) buscar una alternativa al push 
+    //creo un arreglo uevo, lo copio y le agrego el elemento q esta en el input
+    setTareas([...tareas, tarea])
+    //limpiar formulario
+    setTarea('')
+  }
+
+
 
   return (
     <section>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3 d-flex" controlId="exampleForm.ControlInput1">
           {/* <Form.Label>Ingresa tus tareas:</Form.Label> */}
           <Form.Control
