@@ -1,14 +1,31 @@
 import { Button, Form } from 'react-bootstrap';
 // import Form from "react-bootstrap/Form";
 // import Button from "react-bootstrap/Button";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ListaTareas from './ListaTareas';
 
 //src
 const FormularioTareas = () => {
   //inicializar el State
   const [tarea, setTarea] = useState('');
-  const [tareas, setTareas] = useState([]);
+  const tareasLocalStorage = JSON.parse(localStorage.getItem('listaTareas')) || []
+  const [tareas, setTareas] = useState(tareasLocalStorage);
+
+  //useEffect monstaje y desmontaje
+  /* useEffect(() => {
+   console.log('guardar en el local storage')
+  }) */
+
+  //solo se ejecuta en el momento del montaje
+ /*  useEffect(() => {
+   console.log('guardar en el local storage')
+  },[]) */
+
+  //se ejecuta cuando se produce el evento del estado q quiero trabajar 
+   useEffect(() => {
+   console.log('guardar en el local storage')
+   localStorage.setItem('listaTareas',JSON.stringify(tareas))
+  },[tareas])
 
   //borrar tarea
   const borrarTarea = (nombreTarea)=>{
