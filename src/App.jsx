@@ -9,7 +9,7 @@ function App() {
     <>
       <Container className="my-4 mainPage">
         <h1 className="text-center display-3">Lista de tareas</h1>
-        <FormularioTareas></FormularioTareas>
+        <FormularioTareas/>
       </Container>
       <Footer></Footer>
     </>
